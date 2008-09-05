@@ -1,0 +1,10 @@
+h1. mck_google_map
+
+h2. Description
+
+p. My updates to the mck_google_map plugin for "Textpattern":http://textpattern.com.
+
+h2. Licence
+
+p. This project is released under the "GPLv2 licence":http://www.fsf.org/licensing/licenses/info/GPLv2.html.
+
