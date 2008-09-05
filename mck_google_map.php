@@ -14,7 +14,7 @@ function mck_google_js ($atts) {
     'apikey' => ''
   ),$atts));
   if(!$apikey){
-    return "<!-- Your API key is missing. If you don't have one go to http://www.google.com/apis/maps/signup.html -->";
+    return '<!-- Your API key is missing. If you don\'t have one go to http://www.google.com/apis/maps/signup.html -->';
   }
   else{
    return '<script src="http://maps.google.com/maps?file=api&amp;v=1&amp;key='.$apikey.'" type="text/javascript"></script>'.n;
@@ -32,18 +32,18 @@ function mck_google_map ($atts) {
     'typectrl' => '',
     'mark' => '',
     'markpoint' => 'map.getCenter()',
-    'poly' =>''
+    'poly' =>'',
   ),$atts));
 
 
 //valuto ed inserisco il controllo mappa
-if($mapctrl!=""){$ctrlscript="map.addControl(new GSmallMapControl());\n";}
+if($mapctrl!=''){$ctrlscript="map.addControl(new GSmallMapControl());\n";}
 
 //valuto ed inserisco il controllo tipologia mappa
-if($typectrl!=""){$typescript="map.addControl(new GMapTypeControl());\n";}
+if($typectrl!=''){$typescript="map.addControl(new GMapTypeControl());\n";}
 
 //valuto ed inserisco il marker
-if($mark!=""){
+if($mark!=''){
 $scriptmarker="\n
 var marker = new GMarker($markpoint);\n
 GEvent.addListener(marker, \"click\", function() {\n
@@ -52,12 +52,12 @@ GEvent.addListener(marker, \"click\", function() {\n
 map.addOverlay(marker);
 ";
 }
-else{$scriptmarker="";}
+else{$scriptmarker='';}
 
 
 //valuto ed inserisco le polyline
-if($poly!=""){
-list($pline,$plevel) = split(",", $poly, 2);
+if($poly!=''){
+list($pline,$plevel) = split(',', $poly, 2);
 $polyscript="
    var encodedPolyline = new GPolyline.fromEncoded({
     color: \"#FF0000\",
@@ -70,6 +70,7 @@ $polyscript="
    map.addOverlay(encodedPolyline);
 ";
 }
+else {$polyscript='';}
 
 
 
